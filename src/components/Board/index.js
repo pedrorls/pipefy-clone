@@ -1,14 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
+import BoardContext from "./context";
 import List from "../List";
 import { Container } from './styles';
 import { loadLists } from '../../Services/api';
 
-const lists = loadLists();
+const data = loadLists();
 
 export default function Board() {
+  const [lists,] = useState(data);
+  
+  const move = (from, to) => {
+    console.log(from, to);
+  }
+
   return (
-    <Container>
-      {lists.map(list => <List key={list.title} data={list}/>)}
-    </Container>
+    <BoardContext.Provider value={{ lists, move }}>
+      <Container>
+        {lists.map(list => <List key={list.title} data={list}/>)}
+      </Container>
+    </BoardContext.Provider>
   );
 }

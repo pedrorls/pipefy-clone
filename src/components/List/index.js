@@ -16,7 +16,7 @@ export default function List({ data }) {
       </header>
 
       <ul>
-        {data.cards.map(card => <Card key={card.id} data={card} />)}
+        {data.cards.map((card, idx) => <Card key={card.id} data={card} index={idx} />)}
       </ul>
     </Container>
   );
