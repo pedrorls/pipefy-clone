@@ -1,7 +1,7 @@
 import React from 'react';
 import List from "../List";
 import { Container } from './styles';
-import { loadLists } from '../Services/api';
+import { loadLists } from '../../Services/api';
 
 const lists = loadLists();
 
