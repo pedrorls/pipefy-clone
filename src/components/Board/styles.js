@@ -2,5 +2,5 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
-  height: calc(100% - 80px); 
+  height: calc(100% - 90px); 
 `;
